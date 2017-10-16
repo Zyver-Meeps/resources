@@ -1,0 +1,11 @@
+LZMA Copyright (C) 1999-2007 Igor Pavlov
+This version of LZMA for Windows is licenced under the GNU LGPL Version 2.1.
+
+If you need more information about LZMA or do you want to download it go to:
+
+http://www.7-zip.org
+
+Sushi, huh? uses LZMA provisoriously for uncompress the info.xml.lzma the
+files, but in the future it will be removed, although the licence permit the
+redistribution and so on, because not all GNU/Linux distributions and Python
+(2.4 to 2.6) doesn't provides LZMA uncompression support.

@@ -1,0 +1,172 @@
+The following questions are answered below:
+
+1) What is Sushi, huh??
+2) How to install?
+3) I know another methods/software that resolves the dependencies problem. Why
+   Sushi, huh? is better?
+4) Sushi, huh? doesn't work in all web browsers and GNU/Linux distributions,
+   what happening?
+5) Why Sushi, huh? doesn't download some packages?
+6) Sushi, huh? really dowload all packages that I need?
+7) Sushi, huh? say that must download 2Gb of packages, is too much, what I can
+   do?
+8) Why call it Sushi, huh?
+9) Why publish Sushi, huh? under GPL 3?
+10) When will release the next version of Sushi, huh??
+11) Why your english sucks?
+
+*******************************************************************************
+
+1) What is Sushi, huh??
+   ====================
+
+Sushi, huh? was created for personal necessity, is a program that's allow the
+download of packages (RPM, DEB, etc.) for GNU/Linux, from a computer different
+to the own, or also from a operative system that runs with our GNU/Linux
+installed in the same computer.
+Sushi, huh? was tanked for people that, for any reason, haven't connection to
+Internet from their GNU/Linux, for example, because haven't the MODEM drivers
+or simply because they can pay a monthly connexion. Because, install programs
+for GNU/Linux is a hard process, if you haven't connection to Internet,
+Sushi, huh? simplifies this process, allowing us to download the necessary
+packages from any cyber coffee or a friend house.
+
+2) How to install?
+   ===============
+
+Sushi, huh? wasn't thanked for be installed, Sushi, huh? was thanked like as a
+mobile software, it means that you download from Internet, uncompress the file,
+save it in a pendrive and use anywhere, you don't loose your time in
+unnecessary installations and configurations.
+Also you must have root permitions for install programs under Unix/Linux.
+
+3) I know another methods/software that resolves the dependencies problem. Why
+   ===========================================================================
+   Sushi, huh? is better?
+   ======================
+
+Also I know this methods and software, but as user without a internet conexion
+I have a bad opinion about this solutions.
+For example, in case of the methods. This methods requires that the user:
+
+1) Copy or create an script thats maybe he doesn't understand how to use this
+script.
+
+2) The user must download and configure manually the repositories
+configurations files. Too hard process.
+
+3) The user must prepare the files that will download before to go a cyber cofee and
+cann't be modified later.
+
+4) The user must use an specific webbrowser and install an specific plugin.
+
+Sushi, huh? is aimed to people that is totally newie in the amazing GNU/Linux world.
+Is aimed to people that do not have knowledges of shell, script, programming and doesn't
+have time to lose. Sushi, huh? is totally user friendly.
+Sushi, huh? do the hard process totally automatiocally and easy for you.
+You can modify the number of packages to download in any time.
+Sushi, huh? is aimed for the highest portability posible and you aren't tied to an
+specific software.
+
+In case of the softwares:
+
+1) Aren't totally designed to resolve the problem.
+
+2) Uses a GUI that isn't totally portable. Not all GNU/Linux distros comes
+with WX, QT, GTK or TKinter preinstalled from base, and not all work with wine
+(for developers).
+
+3) You are forced to run first the software only on the supported distro and
+cann't test it before choose.
+
+For example some package managin tools, have some features that allow the users
+to install packages from hard drive, but is not totally designed to resolve the
+problem.
+Sushi, huh? only uses the Python standard modules, but Python doesn't come with
+an standard GUI module. Therefore Sushi, huh? uses the standard networking
+modules and the predefined webbrowser to render a friendly nice GUI, achieving
+the highest portability posible.
+You are not forced to use an specific GNU/Linux distribution to test or
+use it.
+Sushi, huh? get you the freedom of compare and choice.
+
+4) Sushi, huh? doesn't work in all web browsers and GNU/Linux distributions, what
+   ==============================================================================
+   happening?
+   ==========
+
+Is true, because the web browsers manipulates the information in different
+ways. And not all GNU/Linux distributions provides support for uncompress LZMA
+files or even a Python machine.
+I can't test Sushi, huh? in all web browsers. I only test it in the lastest
+web browsers.
+Also I can't test it in all distros, I will only test it in the big fives
+(Mandriva, Ubuntu, openSuse, Debian and Fedora).
+I will don't maintain several codes for each operative system, and web
+browsers.
+I'm finding some solutions to this problem.
+
+5) Why Sushi, huh? doesn't download some packages?
+   ===============================================
+
+Some repositories may cause problems because they are not fully tested.
+Also, it can happen that some repositories are outdated, delete the line
+[repository_dumped] to reload the repositories again.
+
+6) Sushi, huh? really dowload all packages that I need?
+   ====================================================
+
+Not always, some time download trash packages.
+The algoritm that resolves the dependecies aren't tottally optimized.
+With the sinchronization support the trash packages are minimal.
+
+7) Sushi, huh? say that must download 2Gb of packages, is too much, what I can
+   ===========================================================================
+   do?
+   ===
+
+Don't worry you can stop the downloads in any time and continue later.
+Under Windows, close the Python console.
+Under GNU/Linux, press CTRL + C, in the console.
+Also, remember to synchronize Sushi, huh? with their distribution to avoid these
+problems.
+
+8) Why call it Sushi, huh?
+   =======================
+
+Sushi comes from:
+
+RPM off line => ROL => roll => Sushi roll => Sushi
+
+What?! => Huh? is the natural reaction when you see the OSbunshin file, and
+well I think very funny join this reaction to the name, becoming in Sushi, huh?
+like as the name official.
+
+9) Why publish Sushi, huh? under GPL 3?
+   ====================================
+
+Sushi, huh? is not a fork of other software, it not use external software,
+except for version 0.1.x and 0.2.0 that uses wget, but in the future it will
+be removed.
+Sushi, huh? is completly coded from scratch.
+Therefore, I can license it under any license that I want, also I prefer to are
+in the top of the technologies advances, and GPL 3 is the new one, and is the
+license for free software by excellence.
+
+10) When will release the next version of Sushi, huh??
+    ==================================================
+
+I don't know. I'm haven't a fix development time, when I consider that is the
+time, I release a new version. But I try to don't delay too much the relese
+times.
+Now Sushi, huh? advice you when a new version is available.
+
+11) Why your english sucks?
+    ========================
+
+Well, the english is not my natal language.
+I can read and understand a text written in english, but I can't write
+correctly in english because the range of words and sentences that I can use is
+very limited. :P sorry.
+I will study more english when Sushi, huh? reach the stable state, comming
+soon.

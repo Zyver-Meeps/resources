@@ -1,0 +1,119 @@
+Sushi, huh? version 0.6.0
+
+- Work stopped, sorry. :(
+- Alpha state.
+- The source code was readapted to be fully compatible and use all the power of Python 3 and 2.
+- Now, the web pages are rendered using Python code embedded in HTML code like in PHP. Also, jQuery is used to improve the performance of the web interface. In this way, the gui development becomes much more flexible and fluid.
+- More eyecandy, thanks to jQuery.
+- New languages added.
+- New Drag&Drop package selection.
+- Major improvements in the packages database petitions and dependencies resolution.
+- Not ready for final users.
+
+Sushi, huh? version 0.5.2
+
+- Beta state.
+- BugFix: included modules httplib and ftplib.
+- BugFix: In sushi_huh_PackagesGz.py, provides are package names.
+- Ready for final users.
+
+Sushi, huh? version 0.5.1
+
+- Beta state.
+- Added the translation system.
+- Added the update alert system.
+- Ready for final users. (Not realy :P)
+
+Sushi, huh? version 0.5.0
+
+- Beta state.
+- Added support for Ubuntu, Fedora and Debian.
+- The Python machine for Windows was downgraded from 2.6 to 2.5, for portability
+  reasons.
+- Quited the option "Check for yet downloaded packages", due to the
+  inconsistency of some repositories.
+- Quited the option "Show only packages with GUI", because only Mandriva
+  supports this feature.
+- Added the possibility to modify the skin.
+- Released TeleportMeNow the tool used to package Python in 0.4.0 release and in
+  successive releases.
+- Ready for final users.
+
+Sushi, huh? version 0.4.0
+
+- Beta state.
+- Fixed the communication protocol of the Sushi, huh? server, caused by a wrong
+  concept about the HTML protocol, :P sorry.
+- Added semi-full support for openSUSE.
+- Added the Python machine.
+- Added the support for sinchronization, allowing the user to automatically:
+  * Transfer the downloaded packages to the PC.
+  * Corrupt packages checking.
+  * Check for yet downloaded packages.
+  * Auto configure the distribution package manager repositories.
+  * Check for available dependencies.
+- Ready for final users.
+- All old files erased.
+
+Sushi, huh? version 0.3.0
+
+- Alpha state.
+- Again totally restructured kernel.
+- The Sushi, huh? server is much more stable now.
+- Improved plugin system.
+- Added support for updates.
+- Support for Mandriva and openSUSE(buggy).
+- Not includes the Python machine.
+- Totally graphical configurable.
+- Fixed the problems with Opera and IExplorer.
+- New visual look.
+- Not ready for final users.
+
+Sushi, huh? version 0.2.0
+
+- Alpha state.
+- Totally restructured kernel.
+- Increased speed for package dependencies find.
+- Added plugin capabilities for support more GNU/Linux distributions
+  (NOT TESTED YET).
+- Not includes support for updates.
+- Added the support for uncompress LZMA files and obtain full information of
+  the packages.
+- Support only for Mandriva.
+- Not includes the Python machine.
+- Infinitesimal configurations using INI files.
+- Ready for final users.
+
+Sushi, huh? version 0.1.0
+
+- Alpha state.
+- First official release.
+- Added a GUI using the Python's web development modules.
+- Added the support for Multiple repositories management.
+- Not includes support for updates.
+- Support only for Mandriva.
+- Many internal restructurations.
+- Work under Windows XP and some GNU/Linux distributions.
+- Not includes the Python machine.
+- Infinitesimal configurations using the source code.
+- Ready for final users.
+
+Sushi, huh? version 0.0.2
+
+- pre-Alpha state.
+- Second unofficial release.
+- Have the basic funtionality for download the packages.
+- Multiple repositories management unsupported.
+- Not includes support for updates.
+- Only configurable using the source code.
+- Not includes the Python machine.
+- Not ready for final users.
+
+Sushi, huh? version 0.0.1
+
+- Preparing state.
+- First unofficial release.
+- Have the basic funtionality for read the information of RPM packages.
+- Only configurable using the source code.
+- Not includes the Python machine.
+- Not ready for final users.

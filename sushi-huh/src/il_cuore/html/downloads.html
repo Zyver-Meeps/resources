@@ -1,0 +1,60 @@
+<?pyhp
+def tr(shared_var, prhase):
+    print(shared_var['tr'](prhase))
+?>
+
+<TABLE border = "0">
+    <TR>
+        <TD>
+            <?pyhp tr(shared_var, 'From') ?>
+        </TD>
+        <TD>
+            : <?pyhp print(shared_var['extras']['download_info']['current_file_url']) ?>
+        </TD>
+    </TR>
+    <TR>
+        <TD>
+            <?pyhp tr(shared_var, 'To') ?>
+        </TD>
+        <TD>
+            : <?pyhp print(shared_var['extras']['download_info']['current_file_path']) ?>
+        </TD>
+    </TR>
+    <TR>
+        <TD>
+            Temp
+        </TD>
+        <TD>
+            : <?pyhp print(shared_var['extras']['download_info']['current_tmp_file']) ?>
+        </TD>
+    </TR>
+    <TR>
+        <TD>
+            <?pyhp tr(shared_var, 'Files') ?>
+        </TD>
+        <TD>
+            : <?pyhp print(shared_var['extras']['download_info']['downloaded_files']) ?>/<?pyhp print(shared_var['extras']['download_info']['total_download_files']) ?>
+        </TD>
+    </TR>
+    <TR>
+        <TD>
+            Bytes
+        </TD>
+        <TD>
+            : <?pyhp print(commons.convert_bytes(shared_var['extras']['download_info']['downloaded_bytes'])) ?>/<?pyhp print(commons.convert_bytes(shared_var['extras']['download_info']['total_download_bytes'])) ?>
+        </TD>
+    </TR>
+</TABLE>
+
+<DIV id = "progressbar"></DIV>
+
+<SCRIPT type = "text/javascript">
+    $("#progressbar").progressbar({value: <?pyhp
+if shared_var['extras']['download_info']['total_download_bytes'] != 0:
+    percent = int(100 * float(shared_var['extras']['download_info']['downloaded_bytes']) / float(shared_var['extras']['download_info']['total_download_bytes']))
+else:
+    percent = 0
+
+print(percent)
+?>});
+</SCRIPT>

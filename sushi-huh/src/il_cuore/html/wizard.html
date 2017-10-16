@@ -1,0 +1,117 @@
+<?pyhp
+from sushi_huh_INIFile import INIFile
+from sushi_huh_Wizard import Wizard
+
+def tr(shared_var, prhase):
+    print(shared_var['tr'](prhase))
+
+def spinbox(formname='', name='', def_value=0, min_value=0, max_value=9999, width=None):
+    output = '<TABLE border="1" cellspacing="0" cellpadding="0"'
+
+    if width != None:
+        output += ' style="width: ' + str(width) + '"'
+
+    output += '>\n\t<TR style = "height: 50%">\n\t\t<TD rowspan="2">\n\t\t\t<INPUT type="text" name="' + name + '" value = "' + str(def_value) + '" style="width: 100%; height: 100%" onkeyup="on_spinbox_keyup(\'' + formname + '\', \'' + name + '\', ' + str(def_value) + ');" onchange="on_spinbox_change(\'' + formname + '\', \'' + name + '\', ' + min_value + ', ' + max_value + ');">\n\t\t</TD>\n\t\t<TD style="width: 15">\n\t\t\t<BUTTON name="' + name + '_up" value="' + name + '_up" type="button" style = "width: 15; height: 100%" onclick = "on_spinbox_up_click(\'' + formname + '\', \'' + name + '\', ' + max_value + ');"></BUTTON>\n\t\t</TD>\n\t</TR>\n\t<TR style = "height: 50%">\n\t\t<TD style = "width: 15">\n\t\t\t<BUTTON name="' + name + '_down" value="' + name + '_down" type="button" style = "width: 15; height: 100%" onclick = "on_spinbox_down_click(\'' + formname + '\', \'' + name + '\', ' + min_value + ');"></BUTTON>\n\t\t</TD>\n\t</TR>\n</TABLE>'
+
+    return output
+
+opts = {}
+
+import sys
+
+if 'plugin' in shared_var['form']:
+    opts['plugin'] = shared_var['form']['plugname']
+elif 'defaults' in shared_var['form']:
+    opts['defaults'] = {}
+
+    for key in shared_var['form']:
+        if key != 'defaults':
+            opts['defaults'][key] = shared_var['form'][key]
+elif 'mirrors' in shared_var['form']:
+    opts['mirrors'] = {}
+
+    for key in shared_var['form']:
+        if key.endswith('_checkbox'):
+            opts['mirrors'][shared_var['form'][key]] = shared_var['form'][shared_var['form'][key]]
+elif 'repositories' in shared_var['form']:
+    opts['repositories'] = []
+
+    for key in shared_var['form']:
+        if key != 'repositories':
+            opts['repositories'] += [key]
+
+wizard = Wizard(opts, False, shared_var['extras']['get_files'])
+output = ''
+
+if wizard.cur_status_key == 'clone':
+    output += '<SCRIPT type = "text/javascript">open_page("il_cuore/html/clonning.html", "DIV.packagesarea");</SCRIPT>'
+else:
+    if wizard.cur_status_key == 'plugin':
+        output += '<H1>' + shared_var['tr']('Select your distribution') + '<H1><FORM name="FormParcer"><SELECT name="plugname" class="ui-main-menu-button ui-state-default ui-corner-all">'
+
+        plugin_keys = sorted(wizard.options['plugin'].keys())
+
+        for plugin_name in plugin_keys:
+            output += '<OPTION value="' + plugin_name + '">' + wizard.options['plugin'][plugin_name]['title'][0] + '\n'
+
+        output += '</SELECT>'
+    if wizard.cur_status_key == 'defaults':
+        output += '<SCRIPT src="il_cuore/js/allow_spinbox.js" type="text/javascript"></SCRIPT><H1>' + shared_var['tr']('I need more information') + '<H1><FORM name="FormParcer"><TABLE border="0">'
+
+        for key in wizard.options['defaults']['DEFAULT']:
+            if wizard.options['defaults'][key]['type'][0] == 'range':
+                output += '<TR><TD><B>' + key + '</B></TD><TD>' + spinbox('FormParcer', key, wizard.options['defaults']['DEFAULT'][key][0], wizard.options['defaults'][key]['from'][0], wizard.options['defaults'][key]['to'][0], 75) + '</TD></TR>'
+
+        for key in wizard.options['defaults']['DEFAULT']:
+            if wizard.options['defaults'][key]['type'][0] == 'list':
+                output += '<TR><TD><B>' + key + '</B></TD><TD><SELECT name="' + key + '" class="ui-main-menu-button ui-state-default ui-corner-all">'
+
+                for option in wizard.options['defaults'][key]:
+                    if option != 'type':
+                        output += '<OPTION value="' + wizard.options['defaults'][key][option][0] + '">' + option
+
+                output += '</SELECT></TD></TR>'
+
+        output += '</TABLE>'
+    if wizard.cur_status_key == 'mirrors':
+        output += '<H1>' + shared_var['tr']('Select the mirrors') + '</H1><FORM name="FormParcer"><TABLE border="0">'
+        mirror_keys = sorted(wizard.options['mirrors'].keys())
+
+        for mirror in mirror_keys:
+            output += '<TR><TD><INPUT type="CHECKBOX" name="' + mirror + '_checkbox" value="' + mirror + '" class="ui-main-menu-button ui-state-default ui-corner-all" CHECKED><B>' + mirror + '</B></TD><TD><SELECT name="' + mirror + '" class="ui-main-menu-button ui-state-default ui-corner-all">'
+
+            for mirror_opt in wizard.options['mirrors'][mirror]:
+                output += '<OPTION value = "' + mirror_opt + '">' + mirror_opt
+
+            output += '</SELECT></TD></TR>'
+
+        output += '</TABLE>'
+    if wizard.cur_status_key == 'repositories':
+        main_ini_file = INIFile(commons['ini_file'])
+        output += '<H1>' + shared_var['tr']('Select the sections') + '</H1><FORM name="FormParcer"><TABLE border="0">'
+
+        if 'mirror' in main_ini_file:
+            repo_keys = sorted(wizard.options['repositories'].keys())
+
+            for repo in repo_keys:
+                if repo in main_ini_file['mirror']:
+                    section_keys = sorted(wizard.options['repositories'][repo].keys())
+
+                    for section in section_keys:
+                        output += '<TR><TD>'
+                        checkbox = '<INPUT type = "CHECKBOX" name = "' + section + '"'
+
+                        if wizard.options['repositories'][repo][section]['enabled']:
+                            checkbox += ' CHECKED'
+
+                        checkbox += '>'
+                        output += checkbox + '</TD><TD>' + section + '</TD></TR>'
+
+            output += '</TABLE>'
+        else:
+            output += shared_var['tr']('No mirrors selected, please select at least one mirror')
+
+    output += '<INPUT type="HIDDEN" name="' + wizard.cur_status_key + '" value="' + wizard.cur_status_key + '"></FORM><INPUT type="BUTTON" id="NextButton" value="' + shared_var['tr']('Next') + '" class="ui-main-menu-button ui-state-default ui-corner-all" onclick="get_next_page();"><SCRIPT type = "text/javascript">$(".ui-main-menu-button").hover(hove_item, unhove_item);</SCRIPT>'
+
+print(output)
+?>

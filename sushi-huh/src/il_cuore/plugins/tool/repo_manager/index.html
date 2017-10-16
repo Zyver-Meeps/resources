@@ -1,0 +1,112 @@
+<TABLE border="0" style="width: 100%">
+    <tr>
+        <TD>
+            <TABLE id="ReposTable" border="0">
+                <thead>
+                    <tr><th>Repository key</th><th>Enabled</th><th>Update</th></tr>
+                </thead>
+                <tbody>
+<?pyhp
+from sushi_huh_INIFile import INIFile
+
+main_ini_file = INIFile(commons['ini_file'])
+output = ''
+
+for repo in main_ini_file['repo']:
+    for section in main_ini_file['repo'][repo]:
+        if main_ini_file[section]['enabled'][0] == 'True':
+            enabled = ' CHECKED'
+        else:
+            enabled = ''
+
+        if 'updates_for' in main_ini_file[section]:
+            update = ' CHECKED'
+        else:
+            update = ''
+
+        output += '<tr><td>' + section + '</td><td align="center"><INPUT type="CHECKBOX" name="' + section.replace(' ', '_').replace('/', '_') + '_checkbox" value="' + section + '"' + enabled + '></td><td align="center"><INPUT type="CHECKBOX" name="' + section.replace(' ', '_').replace('/', '_') + '_checkbox" value="' + section + '"' + update + '></td></tr>'
+
+print(output)
+?>
+                </tbody>
+            </TABLE>
+        </TD>
+        <TD valign="top">
+<INPUT type="BUTTON" id="DeleteButton" value="Delete" class="ui-main-menu-button ui-state-default ui-corner-all" style="width:100%">
+<INPUT type="BUTTON" id="NewButton" value="New" class="ui-main-menu-button ui-state-default ui-corner-all" style="width:100%">
+<INPUT type="BUTTON" id="UpdateButton" value="Update Repositories" class="ui-main-menu-button ui-state-default ui-corner-all" style="width:100%">
+<INPUT type="BUTTON" id="ApplyButton" value="Apply" class="ui-main-menu-button ui-state-default ui-corner-all" style="width:100%">
+        </TD>
+    <tr>
+</TABLE>
+
+<div id="add_new_repository_dialog" title="Add new repository">
+    <table>
+        <tr>
+            <td>Repository name</td>
+            <td>: <input type="text" name="repository_name" id="repository_name" class="text ui-widget-content ui-corner-all"></td>
+        </tr>
+        <tr>
+            <td>apt line</td>
+            <td>: <input type="text" name="apt_line" id="apt_line" class="text ui-widget-content ui-corner-all"></td>
+        </tr>
+    </table>
+</div>
+
+<div id="changelog" style="opacity: 0">
+</div>
+
+<SCRIPT type="text/javascript">
+    oTable = $("#ReposTable").dataTable({"bJQueryUI": true, "bPaginate": false, "sDom": "t"});
+    $(".ui-main-menu-button").hover(hove_item, unhove_item);
+
+    function on_row_click(event)
+    {
+     if($(this).hasClass("ui-state-hover"))
+      $(this).removeClass("ui-state-hover");
+     else
+      $(this).addClass("ui-state-hover");
+    }
+
+    function delete_repositories()
+    {
+     if(confirm("Delete selected repositories?"))
+     {
+      var anSelected = fnGetSelected(oTable);
+
+      for(i = 0; i < anSelected.length; i++)
+       oTable.fnDeleteRow(anSelected[i]);
+     }
+    }
+
+    function new_repository()
+    {
+     $("#add_new_repository_dialog").dialog("open");
+    }
+
+    function fnGetSelected(oTableLocal)
+    {
+     var aReturn = new Array();
+     var aTrs = oTableLocal.fnGetNodes();
+
+     for(var i = 0; i < aTrs.length; i++)
+      if($(aTrs[i]).hasClass("ui-state-hover"))
+       aReturn.push(aTrs[i]);
+
+     return aReturn;
+    }
+
+    $("#ReposTable tr").click(on_row_click);
+    $("#DeleteButton").click(delete_repositories);
+    $("#NewButton").click(new_repository);
+
+$("#add_new_repository_dialog").dialog({
+        bgiframe: true,
+        autoOpen: false,
+        modal: true,
+        buttons: {
+            "Create an account": function(){$(this).dialog("close");},
+            "Cancel": function(){$(this).dialog("close");}
+        }
+    });
+</SCRIPT>

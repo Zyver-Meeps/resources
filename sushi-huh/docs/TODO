@@ -1,0 +1,8 @@
+- New mantainer.
+- Backport the source code to be fully compatible with Python 2 & 3.
+- Finish the tools plugin.
+- Remove the LZMA binary dependency and create my own LZMA
+  uncompressor.
+- Publish all information needed to develop plugins.
+- More developers please.
+- more, more and more...

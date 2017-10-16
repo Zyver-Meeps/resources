@@ -1,0 +1,33 @@
+The Sushi, what???
+==================
+
+Sushi, huh? was created for personal necessity, is a program that's allow the
+download of packages (RPM, DEB, etc.) for GNU/Linux, from a computer different
+to the own, or also from a operative system that runs with our GNU/Linux
+installed in the same computer.
+Sushi, huh? was tanked for people that, for any reason, haven't connection to
+Internet from their GNU/Linux, for example, because haven't the MODEM drivers
+or simply because they can pay a monthly connexion. Because, install programs
+for GNU/Linux is a hard process, if you haven't connection to Internet,
+Sushi, huh? simplifies this process, allowing us to download the necessary
+packages from any cyber coffee or a friend house.
+
+Using Under Windows
+===================
+
+2 - In /sushi-huh/src/ do doble click in the sushi_huh.bat file
+3 - Follow the instructions
+
+Using Under Unix/Linux
+======================
+
+1 - In /sushi-huh/src/ open a terminal an write "python sushi_huh.py"
+2 - Follow the instructions
+
+For a more detailed information and tutorial see the Sushi, huh?'s QRG.
+
+Read Carrefully!!!
+==================
+
+Hi, to all users and possibly devellopers of Sushi, huh?, I'm desired to stop working on Sushi, huh? because now I have no need to use it, I have not fun coding it(it becomes really boring now), and I can not retrieve monetary retribution from it. Also I want to start a new proyect and this is a waste of time, sorry.
+But please remember that Sushi, huh? is 100% Free Open Source Software(GPLv3), then you can take my work and continue it. Also if you have some question about how Sushi, huh? works, be free to send me a mail :)

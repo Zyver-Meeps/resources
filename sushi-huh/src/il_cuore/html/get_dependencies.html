@@ -1,0 +1,19 @@
+<TABLE>
+<?pyhp
+packages, total_size = shared_var['extras']['dependencies']
+packages_table = '<TR><TD>Total packages</TD><TD>: ' + str(len(packages)) + '</TD></TR><TR><TD>Total size</TD><TD>: ' + commons.convert_bytes(total_size) + '</TD></TR>'
+
+print(packages_table)
+?>
+</TABLE>
+
+<UL id="fulldependencieslist">
+<?pyhp
+packages_li = ''
+
+for package in packages:
+    packages_li += '<LI>' + package + '</LI>'
+
+print(packages_li)
+?>
+</UL>

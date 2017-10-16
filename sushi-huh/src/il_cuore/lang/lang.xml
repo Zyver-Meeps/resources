@@ -1,0 +1,257 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<sushi_huh>
+  <default_lang>en</default_lang>
+  <phrasebook>
+    <phrase>
+      <en>Next</en>
+      <es>Siguiente</es>
+      <it>Successivo</it>
+      <br>Seguinte</br>
+    </phrase>
+    <phrase>
+      <en>I need more information</en>
+      <es>Necesito mas informacion</es>
+      <it>Ho bisogno di maggiori informazioni</it>
+      <br>Preciso de mais informações</br>
+    </phrase>
+    <phrase>
+      <en>Select the sections</en>
+      <es>Seleccione las secciones</es>
+      <it>Selezionare le sezioni</it>
+      <br>Selecione as seções</br>
+    </phrase>
+    <phrase>
+      <en>Settings</en>
+      <es>Configuraciones</es>
+      <it>Impostazioni</it>
+      <br>Definições</br>
+    </phrase>
+    <phrase>
+      <en>Close</en>
+      <es>Cerrar</es>
+      <it>Chiudere</it>
+      <br>Fechar</br>
+    </phrase>
+    <phrase>
+      <en>Sinchronize</en>
+      <es>Sincronizar</es>
+      <it>Sincronizza</it>
+      <br>Engate</br>
+    </phrase>
+    <phrase>
+      <en>About Sushi, huh?</en>
+      <es>Acerca de Sushi, huh?</es>
+      <it>A proposito di Sushi, huh?</it>
+      <br>Sobre Sushi, huh?</br>
+    </phrase>
+    <phrase>
+      <en>Search</en>
+      <es>Buscar</es>
+      <it>Cercare</it>
+      <br>Encontrar</br>
+    </phrase>
+    <phrase>
+      <en>Select all</en>
+      <es>Seleccionar todo</es>
+      <it>Seleziona tutto</it>
+      <br>Seleccionar todos</br>
+    </phrase>
+    <phrase>
+      <en>UnSelect all</en>
+      <es>Deseleccionar todo</es>
+      <it>Deseleziona tutto</it>
+      <br>Desmarcar todos</br>
+    </phrase>
+    <phrase>
+      <en>Download</en>
+      <es>Descargar</es>
+      <it>Scaricare</it>
+      <br>Baixar</br>
+    </phrase>
+    <phrase>
+      <en>Name</en>
+      <es>Nombre</es>
+      <it>Nome</it>
+      <br>Nome</br>
+    </phrase>
+    <phrase>
+      <en>Version</en>
+      <es>Version</es>
+      <it>Versione</it>
+      <br>Versão</br>
+    </phrase>
+    <phrase>
+      <en>Release</en>
+      <es>Revision</es>
+      <it>Revisione</it>
+      <br>Liberação</br>
+    </phrase>
+    <phrase>
+      <en>Arch</en>
+      <es>Arquitectura</es>
+      <it>Architettura</it>
+      <br>Arquitetura </br>
+    </phrase>
+    <phrase>
+      <en>Group</en>
+      <es>Grupo</es>
+      <it>Gruppo</it>
+      <br>Bando</br>
+    </phrase>
+    <phrase>
+      <en>Repository</en>
+      <es>Repositorio</es>
+      <it>Contenitore</it>
+      <br>Armazém</br>
+    </phrase>
+    <phrase>
+      <en>Size</en>
+      <es>Tamaño</es>
+      <it>Dimensione</it>
+      <br>Tamanho</br>
+    </phrase>
+    <phrase>
+      <en>Sushi, huh? sinchronization tool</en>
+      <es>Herramienta de sincronizacion de Sushi, huh?</es>
+      <it>Strumenti di sincronizzazione di Sushi, huh?</it>
+      <br>Sushi, huh? ferramenta de acoplar</br>
+    </phrase>
+    <phrase>
+      <en>Transfer the downloaded packages to your PC</en>
+      <es>Transferir los paquetes descargados a su computadora</es>
+      <it>Trasferire i pacchetti scaricati sul macchina</it>
+      <br>Transfira os pacotes baixados para o seu PC</br>
+    </phrase>
+    <phrase>
+      <en>Check damaged packages</en>
+      <es>Revisar paquetes dañados</es>
+      <it>Controllare i pacchetti danneggiati</it>
+      <br>Verifique os pacotes danificados</br>
+    </phrase>
+    <phrase>
+      <en>Auto configure your package manager(must be root)</en>
+      <es>Configurar automaticamente su administrador de paquetes(debe ser root)</es>
+      <it>Configurare automaticamente il vostro gestore di pacchetti (devono essere root)</it>
+      <br>Auto configurar seu gerenciador de pacotes (deve ser root)</br>
+    </phrase>
+    <phrase>
+      <en>Find available dependencies</en>
+      <es>Buscar dependencias disponibles</es>
+      <it>Ricerca di unità disponibili</it>
+      <br>Pesquisar dependências disponíveis</br>
+    </phrase>
+    <phrase>
+      <en>Downloading</en>
+      <es>Descargando</es>
+      <it>Dropping dei pacchetti</it>
+      <br>Baixando</br>
+    </phrase>
+    <phrase>
+      <en>downloaded</en>
+      <es>descargados</es>
+      <it>abbassato</it>
+      <br>descarregado</br>
+    </phrase>
+    <phrase>
+      <en>Select the mirrors</en>
+      <es>Seleccione los espejos</es>
+      <it>Selezionare i fornitori</it>
+      <br>Selecione os servidores</br>
+    </phrase>
+    <phrase>
+      <en>Wait a moment please...</en>
+      <es>Aguarde un momento por favor...</es>
+      <it>Aspetta un attimo di pazienza...</it>
+      <br>Espere um momento por favor ...</br>
+    </phrase>
+    <phrase>
+      <en>Sushi, huh? package manager</en>
+      <es>Manejador de paquetes de Sushi, huh?</es>
+      <it>Gestore di pacchetto di Sushi, huh?</it>
+      <br>Sushi, huh? gerenciador de pacotes</br>
+    </phrase>
+    <phrase>
+      <en>Nothing to show</en>
+      <es>Nada para mostrar</es>
+      <it>Nulla da mostrare</it>
+      <br>Coisas não</br>
+    </phrase>
+    <phrase>
+      <en>Select your distribution</en>
+      <es>Seleccione su distribucion</es>
+      <it>Scegliete la vostra distribuzione</it>
+      <br>Selecione sua distribuição</br>
+    </phrase>
+    <phrase>
+      <en>All downloads are completed</en>
+      <es>Todas las descargas se han completado</es>
+      <it>Tutte le gocce sono state completate</it>
+      <br>Todas as transferências foram concluídos</br>
+    </phrase>
+    <phrase>
+      <en>We done n_n</en>
+      <es>Lo hemos logrado n_n</es>
+      <it>Abbiamo raggiunto</it>
+      <br>Temos feito</br>
+    </phrase>
+    <phrase>
+      <en>Stop</en>
+      <es>Parar</es>
+      <it>Fermare</it>
+      <br>Fazer parar</br>
+    </phrase>
+    <phrase>
+     <en>Go back</en>
+     <es>Volver atras</es>
+     <it>Torna indietro</it>
+     <br>Voltar</br>
+    </phrase>
+    <phrase>
+      <en>Bye Bye</en>
+      <es>Adios</es>
+      <it>Ci vediamo dopo</it>
+      <br>Adeus</br>
+    </phrase>
+    <phrase>
+      <en>A new version is available</en>
+      <es>Una nueva version esta disponible</es>
+      <it>Una nuova versione è disponibile</it>
+      <br>A nova versão está disponível</br>
+    </phrase>
+
+<!-- Estas fueron las ultimas frases que agregue -->
+
+    <phrase>
+      <en>Sushi, huh? package manager for offline GNU/Linux systems</en>
+      <es>Sushi, huh? manejador de paquetes para sistemas GNU/Linux sin internet</es>
+    </phrase>
+    <phrase>
+      <en>Controls</en>
+      <es>Controles</es>
+    </phrase>
+    <phrase>
+      <en>Packages</en>
+      <es>Paquetes</es>
+    </phrase>
+    <phrase>
+      <en>Downloads</en>
+      <es>Descargas</es>
+    </phrase>
+    <phrase>
+      <en>From</en>
+      <es>Desde</es>
+    </phrase>
+    <phrase>
+      <en>To</en>
+      <es>Hasta</es>
+    </phrase>
+    <phrase>
+      <en>Files</en>
+      <es>Archivos</es>
+    </phrase>
+    <phrase>
+      <en>Loading tables, wait a moment please...</en>
+      <es>Cargando las tablas, espere un momento por fabor...</es>
+    </phrase>
+  </phrasebook>
+</sushi_huh>

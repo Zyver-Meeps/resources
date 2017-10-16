@@ -1,0 +1,17 @@
+<?pyhp
+from sushi_huh_Pluginator import Pluginator
+
+pluginator = Pluginator()
+plugins = pluginator.find_plugins('tool')
+output = ''
+
+for plugin_name in plugins:
+    plugin = pluginator.get_plugin('tool', plugin_name, False)
+    output += '<div class="toolitem" style="cursor:pointer;padding:5px;margin:0px 10px 10px 0px;float:left;text-align:center" onclick="open_page(\'' + plugin.get_html() + '\', \'#toolsdialog\');"><img src="' + plugins[plugin_name]['icon'][0] + '" style="width:64px;height:64px"><br><b>' + plugins[plugin_name]['title'][0] + '</b></div>'
+
+print(output)
+?>
+
+<SCRIPT type="text/javascript">
+    $("DIV.toolitem").hover(hove_item, unhove_item);
+</SCRIPT>

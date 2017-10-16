@@ -1,0 +1,159 @@
+<!--<!DOCTYPE html>-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<?pyhp
+from sushi_huh_AlertUpdate import AlertUpdate
+from sushi_huh_INIFile import INIFile
+
+def tr(shared_var, prhase):
+    print(shared_var['tr'](prhase))
+
+ini_file = INIFile(commons['ini_file'])
+
+if 'options' in ini_file:
+    theme = ini_file['options']['program_skin'][0]
+else:
+    theme = commons['program_skin']
+?>
+
+<HTML>
+    <HEAD>
+        <META http-equiv = "Content-type" content = "text/html; charset=utf-8">
+        <META name = "description" content = "Sushi, huh? package manager for offline GNU/Linux systems.">
+        <META name = "author" content = "Gonzalo Exequiel Pedone">
+        <TITLE><?pyhp tr(shared_var, 'Sushi, huh? package manager for offline GNU/Linux systems') ?></TITLE>
+        <LINK rel = "shortcut icon" href ="il_cuore/images/favicon.ico" type = "image/x-icon">
+        <LINK rel = "icon" href = "il_cuore/images/favicon.ico" type = "image/x-icon">
+        <LINK rel = "stylesheet" href = "il_cuore/css/<?pyhp print(theme) ?>/jquery-ui-<?pyhp print(commons['jquery_ui_version']) ?>.css" type = "text/css">
+        <LINK rel = "stylesheet" href = "il_cuore/css/<?pyhp print(theme) ?>/custom.css" type = "text/css">
+        <LINK rel = "stylesheet" href = "il_cuore/css/<?pyhp print(theme) ?>/packages-table.css" type = "text/css">
+        <LINK rel = "stylesheet" href = "il_cuore/css/<?pyhp print(theme) ?>/icondock.css" type = "text/css">
+        <LINK rel = "stylesheet" href = "il_cuore/css/<?pyhp print(theme) ?>/jquery.sidebar.css" type = "text/css">
+        <SCRIPT src = "il_cuore/js/jquery-<?pyhp print(commons['jquery_version']) ?>.js" type = "text/javascript"></SCRIPT>
+        <SCRIPT src = "il_cuore/js/jquery-ui-<?pyhp print(commons['jquery_ui_version']) ?>.js" type = "text/javascript"></SCRIPT>
+        <SCRIPT src = "il_cuore/js/jquery-timer.js" type = "text/javascript"></SCRIPT>
+        <SCRIPT src = "il_cuore/js/jquery.dataTables.js" type = "text/javascript"></SCRIPT>
+        <SCRIPT src = "il_cuore/js/custom.js" type = "text/javascript"></SCRIPT>
+        <SCRIPT src = "il_cuore/js/fisheye-iutil.js" type = "text/javascript"></SCRIPT>
+        <SCRIPT src = "il_cuore/js/jquery.sidebar.js" type = "text/javascript"></SCRIPT>
+        <SCRIPT src = "il_cuore/js/jquery.ahover.js" type ="text/javascript"></SCRIPT>
+        <SCRIPT src = "il_cuore/js/jquery.makesortedset.js" type="text/javascript"></SCRIPT>
+        <SCRIPT type = "text/javascript">
+        <?pyhp
+from sushi_huh_INIFile import INIFile
+
+ini_file = INIFile(commons['ini_file'])
+
+if ini_file == {}:
+    print('first_time_run = true;')
+    print('\t\t\tini_file_closed = false;')
+else:
+    print('first_time_run = false;')
+
+    if 'ready' in ini_file:
+        print('\t\t\tini_file_closed = true;')
+    else:
+        print('\t\t\tini_file_closed = false;')
+?>
+        </SCRIPT>
+    </HEAD>
+    <BODY onload = "main()">
+        <DIV id = "dialog" title = "<?pyhp print(commons['program_name']) ?> is Free Software">
+            <B><?pyhp print(commons['program_name']) ?></B> package manager for offline <B>GNU/Linux systems</B><BR>
+            <B>Copyright (C) 2008  <?pyhp print(commons['author_name']) ?></B>.<BR>
+            <BR>
+
+            <B><?pyhp print(commons['program_name']) ?></B> is free software: you can redistribute it and/or modify<BR>
+            it under the terms of the <B>GNU General Public License</B> as published by<BR>
+            the <B>Free Software Foundation</B>, either <B>version 3</B> of the License, or<BR>
+            (at your option) any later version.<BR>
+            <BR>
+
+            <B><?pyhp print(commons['program_name']) ?></B> is distributed in the hope that it will be useful<BR>
+            but <B>WITHOUT ANY WARRANTY</B>; without even the implied warranty of<BR>
+            <B>MERCHANTABILITY</B> or <B>FITNESS FOR A PARTICULAR PURPOSE</B>.  See the<BR>
+            <B>GNU General Public License</B> for more details.<BR>
+            <BR>
+
+            You should have received a copy of the <B>GNU General Public License</B><BR>
+            along with <B><?pyhp print(commons['program_name']) ?></B>.  If not, see &lt;<A target = "_blank" href = "http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</A>&gt;.<BR>
+            <BR>
+
+            <TABLE border = "0" summary = "Contact info">
+                <TR><TD><B>Email</B></TD><TD>
+                        : <A target = "_blank" href = "mailto://<?pyhp print(commons['mantainer_mail']) ?>"><?pyhp print(commons['mantainer_mail']) ?></A>
+                    </TD></TR><TR><TD>
+                        <B>Web-Site</B>
+                    </TD><TD>
+                        : <A target = "_blank" href = "<?pyhp print(commons['web_site']) ?>"><?pyhp print(commons['web_site']) ?></A>
+                    </TD>
+                </TR>
+            </TABLE>
+        </DIV>
+        <DIV id = "syncdialog" title = "<?pyhp tr(shared_var, 'Synchronizing...') ?>">
+            <TABLE border = "0" style = "width: 100%; height: 100%">
+                <TR>
+                    <TD valign = "center" style = "text-align: center">
+                        <?pyhp print(shared_var['tr']('Synchronizing, wait a moment please...')) ?><BR>
+                        <IMG src = "il_cuore/css/<?pyhp print(theme) ?>/pbar-ani.gif">
+                    </TD>
+                </TR>
+            </TABLE>
+        </DIV>
+        <DIV id = "toolsdialog" title = "<?pyhp tr(shared_var, 'Sushi, huh? tools') ?>">
+        </DIV>
+        <DIV id = "downloadinfodialog" title = "<?pyhp tr(shared_var, 'Download packages?') ?>">
+        </DIV>
+        <DIV id = "SearchPackages" title = "<?pyhp tr(shared_var, 'Search') ?>">
+            <input type="TEXT" id="SearchPackagesInput" name="SearchPackagesInput" style="width: 100%">
+        </DIV>
+        <DIV id = "helperdragicon">
+            <IMG alt = "add package" src = "il_cuore/images/oxygen/128x128/actions/add-files-to-archive.png" style="width: 64px; height: 64px;">
+        </DIV>
+        <DIV id = "downloadslistdialog" title = "<?pyhp tr(shared_var, 'Downloads list') ?>">
+            <DIV id = "downloadslisttable">
+                <UL id = "packagesdownloadlist">
+                </UL>
+            </DIV>
+        </DIV>
+        <DIV id = "descriptiondialog" title = "<?pyhp tr(shared_var, 'Description') ?>">
+            <DIV class = "descriptionarea">
+            </DIV>
+        </DIV>
+        <DIV class = "wallpaperboard">
+            <IMG alt = "wallpaper" src = "il_cuore/css/<?pyhp print(theme) ?>/<?pyhp print(commons['wallpaper']) ?>" class = "wallpaper">
+        </DIV>
+        <DIV class = "mainboard">
+            <DIV id = "packages" class = "ui-widget-content ui-corner-all">
+                <DIV class = "drag ui-widget-header ui-corner-top"><?pyhp tr(shared_var, 'Packages') ?></DIV>
+                <DIV class = "packagesarea">
+                </DIV>
+            </DIV>
+            <DIV id = "downloads" class = "ui-widget-content ui-corner-all">
+                <DIV class = "drag ui-widget-header ui-corner-top"><?pyhp tr(shared_var, 'Downloads') ?></DIV>
+                <DIV class = "downloadsarea">
+                </DIV>
+            </DIV>
+            <DIV id="sidebar">
+            </DIV>
+            <DIV id = "iconbar" style = "z-index: 512">
+                <DIV class="dock-container">
+                    <A class="dock-item" name="search"><SPAN class="iconbaritemtext">Search</SPAN><IMG onclick="$('#SearchPackages').dialog('open');" alt="search" src="il_cuore/images/oxygen/128x128/actions/edit-find.png"></A>
+                    <A class ="dock-item" name="select_all"><SPAN class="iconbaritemtext">Select&nbsp;all</SPAN><IMG onclick="select_all();" alt="select_all" src="il_cuore/images/oxygen/128x128/actions/dialog-apply.png"></A>
+                    <A class="dock-item" name="downloads"><SPAN class="iconbaritemtext">Downloads&nbsp;list</SPAN><IMG onclick="$('#downloadslistdialog').dialog('open');" alt="downloads" src="il_cuore/images/oxygen/128x128/actions/media-playlist.png"></A>
+                    <A class="dock-item" name="install"><SPAN class="iconbaritemtext">Install packages</SPAN><IMG onclick="alert('Function not implemented yet');" alt="install" src = "il_cuore/images/oxygen/128x128/devices/computer.png"></A>
+                    <A class="dock-item" name="sinchronize"><SPAN class="iconbaritemtext">Sinchronize</SPAN><IMG onclick="make_sync();" alt="sinchronize" src="il_cuore/images/oxygen/128x128/actions/tools-wizard.png"></A>
+                    <A class="dock-item" name="tools"><SPAN class="iconbaritemtext">Sushi,&nbsp;huh? tools</SPAN><IMG onclick="show_tools();" alt="tools" src="il_cuore/images/oxygen/128x128/categories/preferences-system.png"></A>
+<?pyhp
+alert_update = AlertUpdate()
+
+if alert_update.new_version != '':
+    print('<A class="dock-item" name="update"><SPAN class="iconbaritemtext">Update Sushi,&nbsp;huh?</SPAN><IMG onclick="open_page(\'' + commons['web_site'] + '\', \'new_window\');" alt="update" src="il_cuore/images/oxygen/128x128/actions/weather-clear.png"></A>')
+?>
+                    <A class="dock-item" name="about"><SPAN class="iconbaritemtext">About Sushi,&nbsp;huh?</SPAN><IMG onclick="$('#dialog').dialog('open');" alt="about" src="il_cuore/images/oxygen/128x128/categories/system-help.png"></A>
+                    <A class="dock-item" name="close"><SPAN class="iconbaritemtext">Close</SPAN><IMG onclick="open_page('il_cuore/html/close.html', 'DIV.packagesarea');" alt="close" src="il_cuore/images/oxygen/128x128/actions/system-shutdown.png"></A>
+                </DIV>
+            </DIV>
+        </DIV>
+    </BODY>
+</HTML>

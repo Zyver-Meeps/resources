@@ -1,0 +1,17 @@
+<?pyhp
+def tr(shared_var, prhase):
+    print(shared_var['tr'](prhase))
+?>
+
+<TABLE border = "0">
+<TR><TD><B><?pyhp tr(shared_var, 'Name') ?></B></TD><TD>: <?pyhp print(shared_var['extras']['description'][1]) ?></TD></TR>
+<TR><TD><B><?pyhp tr(shared_var, 'Version') ?></B></TD><TD>: <?pyhp print(shared_var['extras']['description'][2]) ?></TD></TR>
+<TR><TD><B><?pyhp tr(shared_var, 'Release') ?></B></TD><TD>: <?pyhp print(shared_var['extras']['description'][3]) ?></TD></TR>
+<TR><TD><B><?pyhp tr(shared_var, 'Arch') ?></B></TD><TD>: <?pyhp print(shared_var['extras']['description'][4]) ?></TD></TR>
+<TR><TD><B><?pyhp tr(shared_var, 'Group') ?></B></TD><TD>: <?pyhp print(shared_var['extras']['description'][5]) ?></TD></TR>
+<TR><TD><B><?pyhp tr(shared_var, 'Repository') ?></B></TD><TD>: <?pyhp print(shared_var['extras']['description'][7]) ?></TD></TR>
+<TR><TD><B><?pyhp tr(shared_var, 'Size') ?></B></TD><TD>: <?pyhp print(commons.convert_bytes(shared_var['extras']['description'][8])) ?></TD></TR>
+</TABLE>
+
+<H1><?pyhp print(shared_var['extras']['description'][9]) ?></H1>
+<P><?pyhp print(shared_var['extras']['description'][10]) ?></P>

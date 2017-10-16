@@ -1,0 +1,49 @@
+#iconbar
+{
+ position: absolute;
+ bottom: 0px;
+ left: 0;
+ width: 100%;
+}
+
+.dock-container
+{
+ position: relative;
+ top: 0px;
+ height: 0px;
+}
+
+a.dock-item
+{
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ text-align: center;
+ text-decoration: none;
+ color: rgb(0, 0, 0);
+ cursor: pointer;
+}
+
+.dock-item span
+{
+ display: none;
+}
+
+.dock-item img
+{
+ border: 0;
+ margin: 5px;
+ width: 100%;
+}
+
+.iconbaritemtext
+{
+ display: none;
+}
+
+.iconbaritemtext
+{
+  color: rgb(0, 255, 255);
+  font-size: 4mm;
+  font-weight: bold;
+}

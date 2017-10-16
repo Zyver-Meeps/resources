@@ -1,0 +1,1 @@
+wineconsole sushi_huh.bat

@@ -1,0 +1,26 @@
+<?pyhp
+def tr(shared_var, prhase):
+    print(shared_var['tr'](prhase))
+
+from sushi_huh_INIFile import INIFile
+
+ini_file = INIFile(commons['ini_file'])
+
+if 'options' in ini_file:
+    theme = ini_file['options']['program_skin'][0]
+else:
+    theme = commons['program_skin']
+?>
+
+<TABLE border = "0" style = "width: 100%; height: 100%">
+    <TR>
+        <TD valign = "center" style = "text-align: center">
+            <?pyhp print(shared_var['tr']('Sync ready.')) ?>
+        </TD>
+    </TR>
+</TABLE>
+
+<SCRIPT type="text/javascript">
+    $("#syncdialog").dialog("close");
+    $("#syncdialog").html("<TABLE border=\"0\" style=\"width: 100%;height: 100%\"><TR><TD valign=\"center\" style=\"text-align: center\"><?pyhp print(shared_var['tr']('Synchronizing, wait a moment please...')) ?><BR><IMG src=\"il_cuore/css/<?pyhp print(theme) ?>/pbar-ani.gif\"></TD></TR></TABLE>");
+</SCRIPT>

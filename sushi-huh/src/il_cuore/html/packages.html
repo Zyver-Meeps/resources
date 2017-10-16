@@ -1,0 +1,29 @@
+<?pyhp
+import urllib.parse
+
+if 'groups' in shared_var['extras']:
+    options = ''
+
+    for group in shared_var['extras']['groups']:
+        options += '<LI class="sidebaritem" onclick="open_page(\\\'il_cuore/html/packages.html?group=' + urllib.parse.quote_plus(group) + '\\\', \\\'DIV.packagesarea\\\')">' + group + '</LI>'
+
+    menu = '<SCRIPT type = "text/javascript">'
+    menu += '$("#sidebar").html(\'<UL class="packagegroups">' + options + '</UL>\');'
+    menu += '$("#sidebar").sideBar();'
+    menu += '$("ul.packagegroups LI.sidebaritem").ahover({moveSpeed: 500});'
+    menu += '</SCRIPT>'
+    print(menu)
+?><TABLE class="PackagesTable" border="0"><thead><tr><th>Status</th><th>Name</th><th>Version</th><th>Release</th><th>Sumary</th></tr></thead><tbody><?pyhp
+package_info = ''
+
+for package in shared_var['extras']['packages']:
+    package_info += ''.join(['<TR class="draggablepackage" title="', package[0], '"><TD>', commons['package_status'][package[13]],'</TD><TD><SPAN class="getdescription" onclick="get_description(\'', package[0], '\')" style="cursor:pointer">', package[1], '</SPAN></TD><TD>', package[2], '</TD><TD>', package[3], '</TD><TD>', package[9], '</TD></TR>'])
+
+print(package_info)
+?></tbody><tfoot><tr><th>Status</th><th>Name</th><th>Version</th><th>Release</th><th>Sumary</th></tr></tfoot></TABLE><SCRIPT type="text/javascript">
+    $("TABLE.PackagesTable").dataTable({"aoColumns": [null, {"sType": "html"}, null, null, null], "bJQueryUI": true, "bPaginate": false, "bProcessing": true, "sDom": '<"H"fi>rt<"F"fi>'});
+    $("TABLE.PackagesTable").css("width", "100%");
+    $("th.ui-state-default").css("width", "auto");
+    $("SPAN.getdescription").hover(hove_item, unhove_item);
+    $("TR.draggablepackage").draggable({cursor: "move", opacity: 0.75, revert: "invalid", cursorAt: {top: 32, left: 32}, helper: helper_drag_icon, start: drag_start, stop: drag_stop});
+</SCRIPT>
